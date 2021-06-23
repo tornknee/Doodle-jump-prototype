@@ -19,6 +19,9 @@ public class OptionsMenu : MonoBehaviour
     [SerializeField]
     EventSystem eventSystem;
 
+    [SerializeField]
+    Toggle toggle;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -43,5 +46,17 @@ public class OptionsMenu : MonoBehaviour
         PlayerPrefs.SetFloat("musicVol", musicSlider.value);
         PlayerPrefs.SetFloat("sfxVol", sfxSlider.value);
         PlayerPrefs.Save();
+    }
+
+    public void Fullscreen()
+    {
+        if (toggle.isOn)
+        {
+            Screen.fullScreen = true;
+        }
+        else
+        {
+            Screen.fullScreen = false;
+        }
     }
 }
